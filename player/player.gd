@@ -25,16 +25,14 @@ func set_up_camera():
 	get_tree().current_scene.add_child.call_deferred(camera_instance)
 	
 	func _process(_delta):
-	
-	
-	
+
 	func face_movement_direction(horizontal_input)
 	if not is_zero_approx(horizontal_input):
 		if horizontal_input < 0:
 			player_sprite.scale = Vector2(-initial_sprite_scale.x, initial_sprite_scale.y)
 		else:
 			player_sprite.scale = initial_sprite_scale
-	
+
 	func hadle_movement_state():
 	var is_falling = velocity.y > 0.0 and not is_on_floor()
 	var is_jumping = Input.is_action_just_pressed("jump") and is_on_floor()
